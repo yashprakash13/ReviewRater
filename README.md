@@ -17,6 +17,7 @@ A simple web app prototype that uses sentiment analysis to rate text reviews on 
   
 ### Tools used
 This project uses:
+* Flask for the web app
 * Firebase for authentication of users (registration and login)
 * Stripe for payment demo and
 * Sentiment analysis machine learning models for rating the review (Folders Model, Model2 and Model3) 
