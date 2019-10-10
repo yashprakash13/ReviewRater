@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Register</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f2f2f2;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  </head>
+
+  <body>
+    <div id="container-register">
+      <div id="title"><i class="material-icons lock">lock</i> Register</div>
+
+      <div class="alertM">
+        {% if error%}
+        <h2><strong> Registeration Failed!</strong></h2>
+        {%endif%}
+      </div>
+
+      <form action="/reg" , method="POST">
+        <div class="input">
+          <div class="input-addon">
+            <i class="material-icons">email</i>
+          </div>
+          <input
+            name="email"
+            placeholder="Email"
+            type="email"
+            required
+            class="validate"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="clearfix"></div>
+
+        <div class="input">
+          <div class="input-addon">
+            <i class="material-icons">vpn_key</i>
+          </div>
+          <input
+            name="password"
+            placeholder="Password"
+            type="password"
+            required
+            class="validate"
+            autocomplete="off"
+          />
+        </div>
+
+        <input type="submit" name="regUser" value="Register" />
+      </form>
+
+      <div class="register">
+        <span style="color: #657575">Already have an account?</span>
+        <form action="/gotologin" method="GET">
+          <input type="submit" value="Login here" name="gotologin" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

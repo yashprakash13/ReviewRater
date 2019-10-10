@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login into Review Rater</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  </head>
+
+  <body>
+    <div id="container-login">
+      <div id="title"><i class="material-icons lock">lock</i> Login</div>
+
+      <div class="alertM">
+        {% if error%}
+        <h2><strong> Check your credentials!</strong></h2>
+        {%endif%}
+      </div>
+
+      <form action="/" , method="POST">
+        <div class="input">
+          <div class="input-addon">
+            <i class="material-icons">face</i>
+          </div>
+          <input
+            name="email"
+            placeholder="Email"
+            type="text"
+            required
+            class="validate"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="input">
+          <div class="input-addon">
+            <i class="material-icons">vpn_key</i>
+          </div>
+          <input
+            name="password"
+            placeholder="Password"
+            type="password"
+            required
+            class="validate"
+            autocomplete="off"
+          />
+        </div>
+        <div id="logbtn">
+          <input type="submit" value="Log In" name="loginAction" />
+        </div>
+      </form>
+
+      <div class="forgot-password">
+        <a href="#">Forgot your password?</a>
+      </div>
+
+      <div class="register">
+        <span style="color: #657575">Don't have an account yet?</span>
+
+        <form action="/gotoreg" method="GET">
+          <input type="submit" value="Register" name="gotoregister" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
